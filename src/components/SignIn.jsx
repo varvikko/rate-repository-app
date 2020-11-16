@@ -5,6 +5,7 @@ import FormikTextInput from './FormikTextInput';
 import { View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import theme from '../theme.json';
 
 const styles = StyleSheet.create({
     container: {
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     },
 
     signInButton: {
-        backgroundColor: '#41c6a7',
+        backgroundColor: theme.colors.background.primary,
         color: '#fff',
         textAlign: 'center',
         paddingTop: 12,

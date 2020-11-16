@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import Text from './Text';
+import theme from '../theme.json';
 
 const styles = StyleSheet.create({
     tag: {
-        backgroundColor: '#0067d4',
+        backgroundColor: theme.colors.background.primary,
         color: '#fff',
         padding: 4,
         borderRadius: 4,

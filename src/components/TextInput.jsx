@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         paddingTop: 12,
         paddingBottom: 12,
         borderRadius: 4,
-        backgroundColor: theme.colors.background
+        backgroundColor: theme.colors.background.secondary
     }
 });
 

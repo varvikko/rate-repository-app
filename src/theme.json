@@ -2,11 +2,16 @@
     "colors": {
         "text": {
             "primary": "#161616",
-            "secondary": "#999"
+            "secondary": "#999",
+            "error": "#f6516b"
         },
-        "background": "#f6f6f6"
+        "background": {
+            "primary": "#41c6a7",
+            "secondary": "#f6f6f6"
+        }
     },
     "fontSizes": {
+        "small": 12,
         "normal": 16,
         "heading": 20
     },

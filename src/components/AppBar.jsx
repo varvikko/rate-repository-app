@@ -8,11 +8,12 @@ import {
 } from 'react-native';
 import Constants from 'expo-constants';
 import { Link } from 'react-router-native';
+import theme from '../theme.json';
 
 const styles = StyleSheet.create({
     container: {
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#41c6a7',
+        backgroundColor: theme.colors.background.primary,
         display: 'flex',
         flexDirection: 'row'
     },

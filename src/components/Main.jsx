@@ -8,7 +8,7 @@ import SignIn from './SignIn';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: theme.colors.background,
+        backgroundColor: theme.colors.background.secondary,
         flexGrow: 1,
         flexShrink: 1
     }
