@@ -1,0 +1,18 @@
+{
+    "colors": {
+        "text": {
+            "primary": "#161616",
+            "secondary": "#999"
+        },
+        "background": "#f6f6f6"
+    },
+    "fontSizes": {
+        "normal": 16,
+        "heading": 20
+    },
+    "fonts": {
+        "androidFont": "Roboto",
+        "iosFont": "Arial",
+        "fallbackFont": "System"
+    }
+}
