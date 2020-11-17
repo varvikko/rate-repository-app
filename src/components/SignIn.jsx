@@ -6,6 +6,8 @@ import { View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import theme from '../theme.json';
+import useSignIn from '../hooks/useSignin';
+import AuthStorage from '../utils/authStorage';
 
 const styles = StyleSheet.create({
     container: {
@@ -34,11 +36,23 @@ const schema = yup.object().shape({
 });
 
 const SignIn = () => {
+    const [signIn, result] = useSignIn();
+
+    const onSubmit = async (values) => {
+        const { username, password } = values;
+
+        try {
+            const { data } = await signIn({ username, password });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     return (
         <View style={styles.container}>
             <Formik
                 initialValues={{ username: '', password: '' }}
-                onSubmit={() => console.log('submit')}
+                onSubmit={onSubmit}
                 validationSchema={schema}>
                 {({ handleSubmit }) => (
                     <>
