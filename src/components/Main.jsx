@@ -5,6 +5,7 @@ import AppBar from './AppBar';
 import { Switch, Route, Redirect } from 'react-router-native';
 import theme from '../theme.json';
 import SignIn from './SignIn';
+import RepositoryItem from './RepositoryItem';
 
 const styles = StyleSheet.create({
     container: {
@@ -25,10 +26,13 @@ const Main = () => {
                 <Route path='/signin' exact>
                     <SignIn />
                 </Route>
-                <Redirect to='/' />
+                <Route path='/:id' exact>
+                    <RepositoryItem single />
+                </Route>
+                <Redirect to='/jaredpalmer.formik' />
             </Switch>
         </View>
-    )
+    );
 };
 
 export default Main;

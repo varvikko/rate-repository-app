@@ -35,6 +35,38 @@ const schema = yup.object().shape({
     password: yup.string().required('Password is required')
 });
 
+export const SignInContainer = ({ onSubmit }) => {
+    return (
+        <View style={styles.container}>
+            <Formik
+                initialValues={{ username: '', password: '' }}
+                onSubmit={onSubmit}
+                validationSchema={schema}>
+                {({ handleSubmit }) => (
+                    <>
+                        <FormikTextInput
+                            name='username'
+                            placeholder='Username'
+                            style={styles.field}
+                            testID='username'
+                        />
+                        <FormikTextInput
+                            name='password'
+                            placeholder='Password'
+                            style={styles.field}
+                            secureTextEntry
+                            testID='password'
+                        />
+                        <TouchableWithoutFeedback onPress={handleSubmit} testID='submit'>
+                            <Text style={styles.signInButton}>Sign In</Text>
+                        </TouchableWithoutFeedback>
+                    </>
+                )}
+            </Formik>
+        </View>
+    );
+};
+
 const SignIn = () => {
     const [signIn, result] = useSignIn();
 
@@ -48,33 +80,7 @@ const SignIn = () => {
         }
     };
 
-    return (
-        <View style={styles.container}>
-            <Formik
-                initialValues={{ username: '', password: '' }}
-                onSubmit={onSubmit}
-                validationSchema={schema}>
-                {({ handleSubmit }) => (
-                    <>
-                        <FormikTextInput
-                            name='username'
-                            placeholder='Username'
-                            style={styles.field}
-                        />
-                        <FormikTextInput
-                            name='password'
-                            placeholder='Password'
-                            style={styles.field}
-                            secureTextEntry
-                        />
-                        <TouchableWithoutFeedback onPress={handleSubmit}>
-                            <Text style={styles.signInButton}>Sign In</Text>
-                        </TouchableWithoutFeedback>
-                    </>
-                )}
-            </Formik>
-        </View>
-    );
+    return <SignInContainer onSubmit={onSubmit} />;
 };
 
 export default SignIn;
